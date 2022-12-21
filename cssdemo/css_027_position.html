@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_027_position.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+      }
+
+      .box1 {
+        width: 500px;
+        height: 100px;
+        background-color: black;
+      }
+
+      .box2 {
+        width: 500px;
+        height: 200px;
+        background-color: yellow;
+        position: relative;
+      }
+
+      .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+      }
+
+      .box4 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+        left: 200px;
+        top: 0px;
+      }
+
+      .box5 {
+        width: 100px;
+        height: 400px;
+        background-color: aqua;
+        position: fixed;
+        right: 10px;
+        top: 50px;
+      }
+
+      .box6 {
+        width: 800px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        포지션(position 속성)
+        1. position은 박스에 대한 배치를 변경할 때 사용한다.
+        2. position의 값으로 static, absolute, relative, fixed 등이 있다.
+        3. static : 순서에 의한 기본 위치를 지정한다.
+            absolute : 부모 요소를 기준으로 위치를 변경한다. (원래의 위치값을 잃는다.)
+            relative : 자기 자신을 기준으로 위치를 변경한다. (원래의 위치값을 가지고 있다.)
+            fixed : 스크린을 기준으로 위치를 지정한다. (원래의 위치값을 잃는다.)
+        4. absolute의 위치 지정
+            부모요소의 position이 static이면 기준점이 body가 된다.
+            부모요소의 position이 absolute, fixed, relative이면 기준점이 부모요소이다.
+    -->
+    <div class="box1"></div>
+    <div class="box2">
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <p>요소들의 위치 변경</p>
+    </div>
+    <div class="box5"></div>
+    <div class="box6">
+      (엑스포츠뉴스 황수연 기자) 고두심이 쓰러지며 가문에도 그림자가 드리웠다.
+      더불어 고두심의 행복한 여생을 위해 비밀 연극을 기획했던 성동일은 가족들
+      앞에서 진실을 고했다. 어제 20일 방송된 KBS2 ‘커튼콜’ 14회에서는 가짜 손자
+      유재헌(강하늘 분)과 마지막 추억 여행을 떠났다가 쓰러진 자금순(고두심)이
+      다행히 안정을 되찾았으나 혼수상태에 빠져 걱정을 샀다. 가짜 손자로 배우
+      유재헌을 데려와 연극을 진행했던 정상철은 모든 진실을 밝혔고, 가족들과
+      싸늘한 감정 대치를 이뤘다. 어제 방송된 14회 시청률은 5.2%(닐슨코리아, 전국
+      가구 기준)로 시청자들의 마음을 사로잡으며 이목을 집중시켰다.
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>
