@@ -7,6 +7,20 @@
     <title>js_007_var_let.html</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      //변수선언 전 Uncaught ReferenceError: foo is not defined
+      //변수선언 후 => foo:undefined
+      console.log(`foo:${foo}`);
+
+      //변수선언 전=>Uncaught ReferenceError: bar is not defined
+      //변수선언 후=>Uncaught ReferenceError: Cannot access 'bar' before initialization
+      //   console.log(`bar:${bar}`);
+
+      var foo;
+      let bar;
+      console.log(`bar:${bar}`);
+      bar = 1;
+      console.log(`bar:${bar}`);
+    </script>
   </body>
 </html>
