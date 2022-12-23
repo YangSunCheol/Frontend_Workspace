@@ -45,4 +45,75 @@ console.log(data.replace(/blue/g, 'red')); //Mr Blue has a red house and a red c
 
 console.log(data.replace(/blue/i, 'red')); //Mr red has a blue house and a blue car
 
-console.log(data.replace(/blue/gi, 'red'));
+console.log(data.replace(/blue/gi, 'red')); //Mr red has a red house and a red car
+
+data = 'Hello World';
+console.log(`toUpperCase() : ${data.toUpperCase()}`); //HELLO WORLD
+console.log(`toLowerCase() : ${data.toLowerCase()}`); //hello world
+
+let data2 = 'javascript';
+console.log(`concat(): ${data.concat(data2)}`); //Hello Worldjavascript
+
+console.log(`concat(): ${data.concat(' ', data2)}`); //Hello World javascript
+
+console.log(`concat(): ${data.concat('_', data2)}`); //Hello World_javascript
+
+console.log(`charAt(): ${data.charAt(0)}`); // H
+
+console.log(`charAt(): ${data.charCodeAt(0)}`); // 72 (unicode value)
+
+//match() : 검색데이터와 일치하는 문자열이 있으면 문자열 모두를 찾아서 배열로 리턴하고 일치하는 문자열이 없으면 null로 리턴한다.
+data = 'Mr Blue has a blue house and a blue car';
+let res = data.match(/blue/g);
+
+console.log(`match(): ${res} ${typeof res} ${res instanceof Array}`); // blue,blue object true
+
+res = data.match(/red/g);
+
+console.log(`match(): ${res} ${typeof res} ${res instanceof Array}`); // match(): null object false
+
+//search( ) : 검색데이터와 일치하는 문자열이 있으면 처음의 index를 리턴하고 일치하는 문자열이 없으면 -1을 리턴한다.
+
+res = data.search(/blue/g);
+
+console.log(`search(): ${res}`); // search(): 14
+
+res = data.search(/red/g);
+
+console.log(`search(): ${res}`); // search(): -1
+
+data = 'Mr Blue has a blue house and a blue car';
+//indexOf( ) : 문자열의 인덱스를 리턴
+
+console.log(data.indexOf('M')); // 0
+
+console.log(data.indexOf('B')); // 3
+
+let position = data.indexOf('blue');
+
+console.log(position); // 14
+
+console.log(data.indexOf('blue', position + 1)); //31
+
+data = 'Mr Blue has a blue house and a blue car';
+let pos = -1;
+do {
+  pos = pos + 1;
+  pos = data.indexOf('blue', pos);
+  if (pos != -1) console.log(pos);
+  else break;
+} while (true);
+
+//repeat( )
+let text = 'korea';
+console.log(typeof text);
+console.log(text.repeat(10));
+
+text = '*';
+console.log(text.repeat(10));
+
+let text2 = '  Korea   data ';
+
+console.log(text2.length); //15
+
+console.log(text2.trim().length); //12
