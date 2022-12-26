@@ -15,6 +15,7 @@ protocal: http, domain : www.daum.net
 separator('http://www.daum.net');
 separator('ftp://ftp.microsoft.com');
 
+separator = 'www.daum.net';
 ///////////////////////////////////////////////////////////////
 /*
 [문제2]
