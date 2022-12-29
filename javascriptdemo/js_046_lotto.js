@@ -30,7 +30,7 @@ lotto.sort((a, b) => {
 
 //3. 출력
 
-//console.log(lotto);
+console.log(lotto);
 //NodeList
 let divList = document.querySelectorAll('div.wrap div');
 
