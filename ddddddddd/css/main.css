@@ -1,53 +1,300 @@
-#fullscreen {
-  width: 600px;
-  height: 600px;
-  background-color: grey;
+#container {
+  width: 1200px;
 }
-#screen1 {
-  width: 200px;
-  height: 600px;
-  background-color: black;
+
+#header {
+  background-color: white;
   float: left;
-}
-#screen1-1 {
-  width: 200px;
-  height: 500px;
-  background-color: rgb(255, 0, 0);
-}
-#screen1-2 {
-  width: 200px;
+  width: 1200px;
   height: 100px;
-  background-color: yellow;
 }
-#screen2 {
-  width: 200px;
-  height: 600px;
-  background-color: black;
+
+#left {
+  background-color: white;
   float: left;
+  width: 500px;
+  height: 700px;
 }
-#screen2-1 {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-}
-#screen2-2 {
-  width: 200px;
-  height: 400px;
-  background-color: green;
-}
-#screen3 {
-  width: 200px;
-  height: 600px;
-  background-color: black;
+
+#content {
+  background: white;
   float: left;
+  width: 700px;
+  height: 700px;
 }
-#screen3-1 {
+
+#footer {
+  background: rgba(161, 211, 255, 0.9);
+  clear: both;
+  width: 1200px;
+  height: 70px;
+}
+
+.slider {
+  width: 480px;
+  height: 640px;
+  position: relative;
+  margin-left: 0px;
+  overflow: hidden; /* 현재 슬라이드 오른쪽에 위치한 나머지 슬라이드 들이 보이지 않도록 가림 */
+}
+.slider input[type='radio'] {
+  display: none;
+}
+
+/*=====================================*/
+ul.imgs {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul.imgs li {
+  position: absolute;
+  left: 640px;
+  transition-delay: 1s; /* 새 슬라이드가 이동해 오는 동안 이전 슬라이드 이미지가 배경이 보이도록 지연 */
+
+  padding: 0;
+  margin: 0;
+}
+
+/*=========================================*/
+.bullets {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  z-index: 2;
+}
+.bullets label {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* 현재 선택된 불릿 배경 흰색으로 구분 표시 */
+.slider
+  input[type='radio']:nth-child(1):checked
+  ~ .bullets
+  > label:nth-child(1) {
+  background-color: #fff;
+}
+.slider
+  input[type='radio']:nth-child(2):checked
+  ~ .bullets
+  > label:nth-child(2) {
+  background-color: #fff;
+}
+.slider
+  input[type='radio']:nth-child(3):checked
+  ~ .bullets
+  > label:nth-child(3) {
+  background-color: #fff;
+}
+.slider
+  input[type='radio']:nth-child(4):checked
+  ~ .bullets
+  > label:nth-child(4) {
+  background-color: #fff;
+}
+/*=================================================*/
+.slider input[type='radio']:nth-child(1):checked ~ ul.imgs > li:nth-child(1) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type='radio']:nth-child(2):checked ~ ul.imgs > li:nth-child(2) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type='radio']:nth-child(3):checked ~ ul.imgs > li:nth-child(3) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.slider input[type='radio']:nth-child(4):checked ~ ul.imgs > li:nth-child(4) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.logo {
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+.gnb {
+  position: absolute;
+  top: -80px;
+  right: 0px;
+  /* 부모는? 싸고있는 .pbx.prt */
+  width: 600px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+}
+.gnb li {
   width: 200px;
-  height: 300px;
-  background-color: black;
+  /* height: 50px; */
+  /* li의 높이값을 안주면 a에 설정된 줄간격이 높이값이됨! */
 }
-#screen3-2 {
+.gnb a {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /* 글자설정 */
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+/* 서브메뉴 */
+.gnb ol {
+  height: 0; /* 200px; */
+  background-color: rgba(161, 211, 255, 0.9);
+  overflow: hidden; /* 숨기기 */
+  transition: height 0.4s;
+}
+/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기 */
+.gnb:hover ol {
+  height: 170px;
+  /* 줄간격 40px * 4 = 160px + 여유공간*/
+}
+/* 서브메뉴 a */
+.gnb ol a {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+/* 하이라이트 설정 */
+/* 상위,하위메뉴 */
+.gnb li:hover > a {
+  color: rgb(0, 94, 255);
+}
+/* 하위메뉴 */
+.gnb ol li:hover a {
+  background-color: rgb(227, 245, 176);
+}
+
+
+.cont {
+  position: absolute;
+  top : 100px
+  left : 100px
+  height : 100px;
+  background-color: rgb(179, 218, 255);
+}
+/* 파티션가로값 (한꺼번에 등분할!) */
+.cont > .pbx {
+  float: left;
+  width: 400px;
+}
+
+/* 탭메뉴 */
+.tm {
   width: 200px;
-  height: 300px;
-  background-color: pink;
+  height: 40px;
 }
+.tm li a {
+  display: block;
+  width: 100px;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgb(94, 169, 255);
+}
+/* 선택된 탭class */
+.tm li.on a {
+  background-color: #fff;
+}
+
+/* 탭내용박스 */
+.tc {
+  position: absolute;
+  height: 138px;
+  background-color: #fff;
+}
+/* 탭내용박스 li - 2개 */
+.tc > li {
+  width: 100%;
+  height: 100%;
+  display: none; /* 모두안보임 */
+}
+/* 선택된 탭내용박스 li 클래스 */
+.tc > li.on {
+  display: block;
+}
+
+/* 공지사항 리스트박스 */
+.gong {
+  padding-top: 9px;
+  padding-left: 7px;
+}
+.gong li {
+  float: none;
+  line-height: 24px;
+}
+.gong a {
+  display: inline-block;
+  /* 줄안바뀌면서 width디자인 적용위해 */
+  width: 270px;
+
+  /* 아래 3가지로 한줄짜리 말줄임표시하기 */
+  white-space: nowrap;
+  /* 1.줄바꿈방지 */
+  overflow: hidden;
+  /* 2.넘치는 글자숨기기 */
+  text-overflow: ellipsis;
+  /* 3.텍스트 말줄임표시 */
+}
+
+/* 날짜표시 오른쪽끝으로 */
+.gong span {
+  float: right;
+  padding-right: 5px;
+}
+
+/* 갤러리 리스트박스 */
+.gal li {
+  margin: 18px 12px;
+}
+.gal img {
+  width: 100px;
+  border: 1px solid #777;
+}
+
+/* 팝업창 */
+.pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  padding: 15px;
+  z-index: 999;
+  background-color: #fff;
+  border: 3px solid #888;
+  display: none; /* 처음에 안보임! */
+}
+.pop h1 {
+  /* 팝업제목 */
+  font-size: 24px;
+  text-align: center;
+}
+.pop p {
+  /* 팝업내용문단 */
+  line-height: 30px;
+}
+/* 닫기버튼박스 */
+.bbx {
+  text-align: right;
+  /* button요소는 inline-block이므로 
+    인라인처럼 텍스트정렬이 적용된다! */
+}
+
+/* 배너, 바로가기 이미지 공통 */
+.im {
+  width: 100%;
+  height: 100%;
+}
+
