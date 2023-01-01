@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="js/main.js"></script>
   </head>
   <body>
+   
     <div id="container">
       <div id="header">
         <h1><div class="pbx top1">
@@ -15,136 +17,78 @@
             <a href="#">
               <img src="./images/logo.png" alt="로고" />
             </a>
-          </h1>
-           <div class="pbx top2 prt">
-            <ul class="gnb">
-              <li>
-                <a href="#">김서후</a>
-                <ol>
-                  <li><a href="#">1살</a></li>
-                  <li><a href="#">2살</a></li>
-                  <li><a href="#">3살</a></li>
-                  <li><a href="#">4살</a></li>
-                </ol>
-              </li>
-              <li>
-                <a href="#">서후삼촌</a>
-                <ol>
-                  <li><a href="#">삼촌중학생</a></li>
-                  <li><a href="#">삼촌고등학생</a></li>
-                  <li><a href="#">삼촌대학생</a></li>
-                  <li><a href="#">삼촌리즈시절</a></li>
-                </ol>
-              </li>
-              <li>
-                <a href="#">서후네가족</a>
-                <ol>
-                  <li><a href="#">서후외할아버지</a></li>
-                  <li><a href="#">서후외할머니</a></li>
-                  <li><a href="#">서후아빠</a></li>
-                  <li><a href="#">서후엄마</a></li>
-                </ol>
-              </li>
-            </ul>
-          </div>
-        </div></h1>
+            
+            <nav>
+              <div class="main">
+                      
+                <input type="text" placeholder="ID" id="id" class="account">
+                <input type="password" placeholder="Password" id="password" class="account">
+                <button id="login" class="account">login</button>
+                <p id="alert" class="account"> </p>
+        
+        
+            </nav>
+         
         
       </div>
       <div id="left">
-        <h2>     <div class="slider">
+        <ul class="menu">
+          <li>
+            <a href="#">김서후</a>
+            <ul class="submenu">
+              <li><a href="#">1살</a></li>
+              <li><a href="#">2살</a></li>
+              <li><a href="#">3살</a></li>
+              <li><a href="#">4살</a></li>
+              
+            </ul>
+          </li>
+          <li>
+            <a href="#">서후삼촌</a>
+            <ul class="submenu">
+              <li><a href="#">삼촌중학생</a></li>
+              <li><a href="#">삼촌고등학생</a></li>
+              <li><a href="#">삼촌대학생</a></li>
+              <li><a href="#">삼촌리즈시절</a></li>
+              
+            </ul>
+          </li>
+          <li>
+            <a href="#">서후네가족</a>
+            <ul class="submenu">
+              <li><a href="#">서후외할아버지</a></li>
+              <li><a href="#">서후외할머니</a></li>
+              <li><a href="#">서후아빠</a></li>
+              <li><a href="#">서후엄마</a></li>
+            
+            </ul>
+          </li>
+     
+        </ul>
+        
+      </div>
+      <div id="content">
+        <div class="slider">
           <input type="radio" name="slide" id="slide1" checked>
           <input type="radio" name="slide" id="slide2">
           <input type="radio" name="slide" id="slide3">
+          
           <ul id="imgholder" class="imgs">
               <li><img src="./images/KaKaoTalk002.jpg"></li>
               <li><img src="./images/KaKaoTalk008.jpg"></li>
               <li><img src="./images/KaKaoTalk016.jpg"></li>
+            
           </ul>
+          
           <div class="bullets">
               <label for="slide1">&nbsp;</label>
               <label for="slide2">&nbsp;</label>
               <label for="slide3">&nbsp;</label>
-          </div></h2>
-      </div>
-      <div id="content">
-        <h2>
-          <main class="ibx cont">
-            <div class="pbx">
-              <!-- 탭메뉴 -->
-              <ol class="tm">
-                <li class="on" onclick="chgTab(0,1)">
-                  <a href="#">서후활동</a>
-                </li>
-                <li onclick="chgTab(1,0)">
-                  <a href="#">삼촌활동</a>
-                </li>
-              </ol>
-              <!-- 탭내용 -->
-              <ol class="tc">
-                <!-- 공지사항 -->
-                <li class="on">
-                  <ul class="gong">
-                    <li>
-                      <a href="#" onclick="popup('block')"> 김서후 어린이집 사진 </a>
-                      <span>2022. 06. 07</span>
-                    </li>
-                    <li>
-                      <a href="#"> 김서후 바닷가 여행사진 </a>
-                      <span>2022. 08. 08</span>
-                    </li>
-                    <li>
-                      <a href="#"> 김서후 박물관 소풍 사진 </a>
-                      <span>2022. 09. 09</span>
-                    </li>
-                    <li>
-                      <a href="#"> 김서후 먹방 사진 </a>
-                      <span>2022. 10. 10</span>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <ul class="gal">
-                    <li>
-                      <a href="#">
-                        <img src="./images/gal1.png" alt="갤러리이미지" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/gal2.png" alt="갤러리이미지" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/gal3.png" alt="갤러리이미지" />
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ol>
-            </div>
-            <div class="pbx">
-              <!-- 배너 -->
-              <a href="#">
-                <img class="im" src="./images/contents_01.png" alt="배너이미지" />
-              </a>
-            </div>
-          </main></h2>
-        </h2>
-      </div>
-      <div id="footer">
-        <h1>Copyright YSC FAMILY All rights reserved.</h1><div class="pbx info3">
-          <!-- sns -->
-          <a href="#">
-            <img src="./images/sns1.png" alt="전화" />
-          </a>
-          <a href="#">
-            <img src="./images/sns2.png" alt="이메일" />
-          </a>
-          <a href="#">
-            <img src="./images/sns3.png" alt="카카오톡" />
-          </a>
+          </div>
+        
         </div>
+      </div>
+     
       </div>
     </div>
   </body>
