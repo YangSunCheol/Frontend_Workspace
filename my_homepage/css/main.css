@@ -1,146 +1,48 @@
-@charset "utf-8";
-/* 메인 CSS - main.css */
-html,
-body {
-  
-  margin: 0;
-  padding: 0;
-}
-body {
-  position: relative;
-  color: black;
-}
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* body *{
-    outline: 2px dashed blue;
-} */
-ul,
-ol {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-li {
-  float: left;
-}
-
-/* 공통 CSS */
-
-/* 중앙정렬박스 */
-.ibx {
-  z-index: 500;
+#container {
   width: 1200px;
-  margin-left: 0px; /* 마영오 */
-  margin-top: 0px;
-}
-/* 파티션박스 */
-.pbx {
-  height: 100%; /* 부모높이채움! */
-  margin-left: px;
-  padding: 10px;
-  box-sizing: border-box;
-  /* 박스가 패딩때문에 커지는 것을 방지! */
-}
-/* 부모자격 */
-.prt {
-  position: relative;
 }
 
-/****************** A ******************/
-.top {
-  position: relative; /* z-index때문에 줌 */
-  height: 100px;
-  z-index: 999; /*가장위*/
-}
-/* 파티션가로값 */
-.top1 {
-  width: 200px;
-}
-.top2 {
-  width: 1000px;
-}
-/* 로고 */
-.logo {
-  margin-left: 50px;
-  margin-top: 0px;
-}
-
-/* 메뉴 */
-.gnb {
-  position: absolute;
-  top: -80px;
-  right: 0px;
-  /* 부모는? 싸고있는 .pbx.prt */
-  width: 600px;
+#header {
+  background-color: #fff;
+  float: left;
+  width: 1200px;
   height: 50px;
-  background-color: rgb(255, 255, 255);
 }
-.gnb li {
+
+#nav {
+  position: absolute;
+  height: 60px;
+ margin-top: -20px;
+ margin-left: 1000px;
+}
+#left {
+  background-color:#fff);
+  float: left;
   width: 200px;
-  /* height: 50px; */
-  /* li의 높이값을 안주면 a에 설정된 줄간격이 높이값이됨! */
-}
-.gnb a {
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  /* 글자설정 */
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 50px;
-  text-align: center;
-}
-/* 서브메뉴 */
-.gnb ol {
-  height: 0; /* 200px; */
-  background-color: rgba(161, 211, 255, 0.9);
-  overflow: hidden; /* 숨기기 */
-  transition: height 0.4s;
-}
-/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기 */
-.gnb:hover ol {
-  height: 170px;
-  /* 줄간격 40px * 4 = 160px + 여유공간*/
-}
-/* 서브메뉴 a */
-.gnb ol a {
-  font-size: 16px;
-  line-height: 40px;
+  height: 660px;
 }
 
-/* 하이라이트 설정 */
-/* 상위,하위메뉴 */
-.gnb li:hover > a {
-  color: rgb(0, 94, 255);
-}
-/* 하위메뉴 */
-.gnb ol li:hover a {
-  background-color: rgb(227, 245, 176);
+#content {
+  background: #fff;
+  float: left;
+  width: 1000px;
+  height: 660px;
 }
 
-/******************* B *******************/
-/* .ban {
-  height: 300px;
-  overflow: hidden; 
-  /*넘치는 슬라이드 숨기기 */
-/* }  */
-/* 슬라이드 */
-/* .slide {
+#footer {
+  background: rgba(161, 211, 255, 0.9);
   position: relative;
-  top: 0;
-} */
-/*======================================*/
+  width: 1200px;
+  height: 70px;
+  margin-top: 20px;
+  margin-left: -200px;
+}
+/*슬라이드------------------------------------------*/
 .slider {
-  display: flex;
   width: 480px;
   height: 640px;
   position: relative;
-  margin-left: 80px;
+  margin-left: 0px;
   overflow: hidden; /* 현재 슬라이드 오른쪽에 위치한 나머지 슬라이드 들이 보이지 않도록 가림 */
 }
 .slider input[type='radio'] {
@@ -224,160 +126,108 @@ ul.imgs li {
   transition: 0.5s;
   z-index: 1;
 }
-/*========================================================*/
-/********************** C **********************/
-.cont {
-  position: absolute;
-  top : 100px
-  left : 100px
-  height : 100px;
-  background-color: rgb(179, 218, 255);
-}
-/* 파티션가로값 (한꺼번에 등분할!) */
-.cont > .pbx {
-  float: left;
-  width: 400px;
+
+/*슬라이드------------------------------------------*/
+
+.logo {
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
-/* 탭메뉴 */
-.tm {
-  width: 200px;
-  height: 40px;
-}
-.tm li a {
-  display: block;
-  width: 100px;
-  text-align: center;
-  line-height: 40px;
-  background-color: rgb(94, 169, 255);
-}
-/* 선택된 탭class */
-.tm li.on a {
-  background-color: #fff;
-}
-
-/* 탭내용박스 */
-.tc {
-  position: absolute;
-  height: 138px;
-  background-color: #fff;
-}
-/* 탭내용박스 li - 2개 */
-.tc > li {
-  width: 100%;
-  height: 100%;
-  display: none; /* 모두안보임 */
-}
-/* 선택된 탭내용박스 li 클래스 */
-.tc > li.on {
-  display: block;
-}
-
-/* 공지사항 리스트박스 */
-.gong {
-  padding-top: 9px;
-  padding-left: 7px;
-}
-.gong li {
-  float: none;
-  line-height: 24px;
-}
-.gong a {
-  display: inline-block;
-  /* 줄안바뀌면서 width디자인 적용위해 */
-  width: 270px;
-
-  /* 아래 3가지로 한줄짜리 말줄임표시하기 */
-  white-space: nowrap;
-  /* 1.줄바꿈방지 */
-  overflow: hidden;
-  /* 2.넘치는 글자숨기기 */
-  text-overflow: ellipsis;
-  /* 3.텍스트 말줄임표시 */
-}
-
-/* 날짜표시 오른쪽끝으로 */
-.gong span {
-  float: right;
-  padding-right: 5px;
-}
-
-/* 갤러리 리스트박스 */
-.gal li {
-  margin: 18px 12px;
-}
-.gal img {
-  width: 100px;
-  border: 1px solid #777;
-}
-
-/* 팝업창 */
-.pop {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  padding: 15px;
-  z-index: 999;
-  background-color: #fff;
-  border: 3px solid #888;
-  display: none; /* 처음에 안보임! */
-}
-.pop h1 {
-  /* 팝업제목 */
-  font-size: 24px;
-  text-align: center;
-}
-.pop p {
-  /* 팝업내용문단 */
-  line-height: 30px;
-}
-/* 닫기버튼박스 */
-.bbx {
-  text-align: right;
-  /* button요소는 inline-block이므로 
-    인라인처럼 텍스트정렬이 적용된다! */
-}
-
-/* 배너, 바로가기 이미지 공통 */
+/* 배너, 바로가기 이미지 공통 -----------------------*/
 .im {
   width: 100%;
   height: 100%;
 }
+/* 배너, 바로가기 이미지 공통 ----------------------- */
 
-/******************** D ********************/
-.info {
-  z-index: 500;
-  position: absolute;
-  top: 450px;
-  height: 100px;
-  background-color: rgb(240, 150, 150);
+/*menu bar----------------------------------------*/
+
+* {
+  padding: 0;
+  margin: 0;
 }
-/* 파티션가로값 */
-.info1 {
-  width: 300px;
+li {
+  list-style: none;
 }
-.info2 {
-  /* 카피라잇 */
-  position: absolute;
-  width: 900px;
-  text-align: center;
-  line-height: 80px;
-  /* 위아래 패딩값 20px제외 */
-  font-weight: bold;
+a {
+  text-decoration: dotted;
+  font-size: 18px;
 }
-.info3 {
-  top: 400px;
-  position: absolute;
+
+.menu {
   width: 200px;
-  text-align: center;
-  line-height: 107px;
+  overflow: hidden;
+  margin: 150px auto;
 }
-/* sns 이미지 */
 
-.info3 img {
-  position: absolute;
-  width: 40px;
-  margin: 0 5px;
+.menu > li {
+  width: 100%; /*20*5=100%*/
+
+  text-align: center;
+  line-height: 40px;
+  background-color: #fff;
+}
+
+.menu a {
+  color: black;
+}
+
+.submenu > li {
+  line-height: 50px;
+  background-color: #94a9ff;
+}
+
+.submenu {
+  height: 0; /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+}
+
+.menu > li:hover {
+  background-color: #94a9ff;
+  transition-duration: 0.5s;
+}
+
+.menu > li:hover .submenu {
+  height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+  transition-duration: 1s;
+}
+
+.menu li:hover > a {
+  color: #fff;
+}
+/* 하위메뉴 */
+.menu li ul:hover a {
+}
+
+/*로그인------------------------------------------*/
+
+.main {
+  width: 250px;
+  height: 100px;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+
+#login {
+  width: 71%;
+  background-color: skyblue;
+  border-color: transparent;
+  color: white;
+}
+
+.account {
+  display: block;
+  margin-bottom: 3px;
+  padding: 3px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+#alert {
+  border-color: transparent;
 }
