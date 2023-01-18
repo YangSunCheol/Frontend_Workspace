@@ -12,27 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import part03.dao.JoinService;
 
 
-//http://localhost:8090/mybatisdemo/empDeptJoin
+// http://localhost:8090/mybatisdemo/deptEmpJoin
 
-
-@WebServlet("/empDeptJoin")
-public class EmpDeptController extends HttpServlet {
+@WebServlet("/deptEmpJoin")
+public class DeptEmpController extends HttpServlet{
 	private JoinService service;
 	
-	public EmpDeptController() {
+	public DeptEmpController() {
 		service = new JoinService();
 	}
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setAttribute("aList", service.dept_empProcess());
 		
-		req.setAttribute("aList", service.emp_deptProcess());
-		
-		String path = "/part03/empDeptJoin.jsp";
-		
+		String path = "/part03/deptEmpJoin.jsp";
 		RequestDispatcher dis = req.getRequestDispatcher(path);
 		dis.forward(req, resp);
-		
-	}// end doGet()
-	
-}// end class
+	}//end doGet()
+
+}//end class

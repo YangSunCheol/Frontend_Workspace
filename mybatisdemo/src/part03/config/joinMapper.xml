@@ -26,6 +26,26 @@
 
 
 	</select>
+	
+<!-- collection : 1:M관계의 JOIN명령을 처리하기 위해서 사용한다. -->
+<resultMap type="part03.dto.DeptDTO" id="dept_emp_result">
+<result column="department_id" property="department_id" />
+<result column="department_name" property="department_name" />
+<collection property="empList" javaType="java.util.List" ofType="part03.dto.EmpDTO">
+<result column="employee_id" property="employee_id"/>
+<result column="first_name" property="first_name"/>
+<result column="job_id" property="job_id"/>
+
+</collection>
+
+
+</resultMap>
+
+<select id="dept_emp_list" resultMap="dept_emp_result">
+SELECT d.department_id, d.department_name, e.employee_id, e.first_name, e.job_id
+FROM departments d, employees e
+WHERE d.department_id=e.department_id
+</select>
 
 
 </mapper>
